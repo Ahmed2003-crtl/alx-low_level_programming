@@ -8,6 +8,13 @@ int _abs(int n)
 {
 	int i;
 
-	i = -1 * n;
-	return (i);
+	if (n <= 0)
+	{
+		i = -1 * n;
+		return (i);
+	}
+	else
+	{
+		return (n);
+	}
 }
