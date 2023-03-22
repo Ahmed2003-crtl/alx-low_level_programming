@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- *jack_bauer - print the hours and min 
+ *jack_bauer - print the hours and min
  *Return: 0 (sucess)
  */
 void jack_bauer(void)
 {
-	int min , hou;
+	int min, hou;
 
 	for (hou = 0 ; hou <= 23 ; hou++)
 	{
