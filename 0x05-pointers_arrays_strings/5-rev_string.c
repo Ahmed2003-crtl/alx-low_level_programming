@@ -10,8 +10,9 @@ void rev_string(char *s)
 	int j;
 	int i = 0;
 	char rev;
+	int l = strlen(s) - (strlen(s) / 2);
 
-	for (j = strlen(s) - 1 ; j >= 5 ; j--)
+	for (j = strlen(s) - 1 ; j >= l ; j--)
 	{
 		rev = s[j];
 		s[j] = s[i];
