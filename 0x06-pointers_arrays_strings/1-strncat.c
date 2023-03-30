@@ -9,7 +9,7 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	signed long int i ;
+	signed long int i;
 	int k = strlen(dest);
 
 	for (i = 0 ; i < n && src[i] != '\0' ; i++)
@@ -17,6 +17,5 @@ char *_strncat(char *dest, char *src, int n)
 		dest[k] = src[i];
 		k++;
 	}
-	dest[k] = '\0' ; 
 	return (dest);
 }
