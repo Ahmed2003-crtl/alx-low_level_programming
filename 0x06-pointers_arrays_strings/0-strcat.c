@@ -11,7 +11,7 @@ char *_strcat(char *dest, char *src)
 	unsigned long int j;
 	int k = strlen(dest);
 
-	for (j = 0 ; j <= strlen(dest) ; j++)
+	for (j = 0 ; src[j] != '\0' ; j++)
 	{
 		dest[k] = src[j];
 		k++;
