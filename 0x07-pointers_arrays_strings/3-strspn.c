@@ -19,7 +19,7 @@ unsigned int _strspn(char *s, char *accept)
 				rev++;
 			}
 	}
-	if ( rev == 0)
+	if (rev == 0)
 	{
 		return (0);
 	}
