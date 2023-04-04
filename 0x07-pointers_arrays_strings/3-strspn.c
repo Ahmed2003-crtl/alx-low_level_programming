@@ -8,7 +8,7 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, l;
+	int i, l, k;
 	int rev = 0;
 
 	for (i = 0 ; accept[i] != '\0' ; i++)
@@ -25,6 +25,7 @@ unsigned int _strspn(char *s, char *accept)
 	}
 	else
 	{
-		return (strlen(s) - rev);
+		k = strlen(s) - rev;
+		return (k);
 	}
 }
