@@ -2,4 +2,5 @@
 #define MAIN_H
 
 #include <stdio.h>
+int main();
 #endif
