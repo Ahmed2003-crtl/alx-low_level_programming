@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * list_len - print the number of elementes
+ * print_list - print the number of elementes
  * @h: is a pointer
  * Return: 0 (success)
  */
