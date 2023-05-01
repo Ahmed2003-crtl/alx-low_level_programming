@@ -5,19 +5,18 @@
 /**
  * free_listint2 - free the list
  * @head: is a pointer
- * Return 0 (success)
 */
 void free_listint2(listint_t **head)
 {
-	listint_t *temp = *head;
+	listint_t *temp;
 
 	if (head == NULL)
 		return;
-	while (temp != NULL)
+	while (*head != NULL)
 	{
-		*head = temp->next;
-		free(temp);
-		temp = *head;
+		temp = (*head)->next;
+		free(*head);
+		*head = temp;
 	}
 	*head = NULL;
 }
