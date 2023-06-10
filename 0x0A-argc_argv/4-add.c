@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 /**
  * main - calculate the addition of the number in the line command argument
@@ -18,19 +19,20 @@ int main(int argc, char *argv[])
 
 	}
 	else
-		for (i = 0 ; i < argc ; i++)
+		for (i = 1 ; i < argc ; i++)
 		{
 			char *t = argv[i];
+			unsigned int count;
 
-			if ((*t  >= 'A' && *t <= 'Z') || (*t >= 'a' && *t <= 'z'))
+			for (count = 0 ; count < strlen(t) ; count++)
 			{
-				printf("Error\n");
-				return (1);
+				if (!isdigit(t[count]))
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
-			else
-			{
-				res = res + atoi(argv[i]);
-			}
+			res = res + atoi(argv[i]);
 		}
 	printf("%d\n", res);
 	return (0);
