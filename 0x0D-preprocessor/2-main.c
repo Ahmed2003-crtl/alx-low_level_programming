@@ -6,8 +6,8 @@
  * @argv: is a pointer
  * Return: 0 (success)
  */
-int main(int argc, char *argv[])
+int main()
 {
-	printf("%s\n", argv[argc - argc]);
+	printf("%s\n", __FILE__);
 	return (0);
 }
