@@ -6,16 +6,17 @@
  * @name: is a pointer
  * @age: is a float var
  * @owner: is a pointer
+ * Return: 0 (success)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	struct dog *p;
 
 	p = malloc(sizeof(struct dog));
-	if (p == NULL)
+	if (p == NULL || name == NULL || owner == NULL)
 		return (NULL);
+	(void)age;
 	p->name = name;
-	p->age = age;
 	p->owner = owner;
 	return (p);
 }
