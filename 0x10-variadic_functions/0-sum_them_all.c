@@ -1,24 +1,21 @@
-#include "variadic_functions.h"
 #include <stdarg.h>
+#include "variadic_functions.h"
 /**
- * sum_them_all - cal the sum of numbers
- * @n: is an int
+ * sum_them_all - print the sum of the numbers
+ * @n: is the number of the elements in the list
  * Return: 0 (success)
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list ptr;
 	unsigned int i;
 	int sum = 0;
 
-	if (n == 0)
-		return (0);
-	va_start(ptr, n);
+	va_list(p);
+	va_start(p, n);
 	for (i = 0 ; i < n ; i++)
 	{
-		sum = sum + va_arg(ptr, int);
+		sum = sum + va_arg(p, int);
 	}
-	va_end(ptr);
+	va_end(p);
 	return (sum);
 }
-
