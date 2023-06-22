@@ -8,10 +8,11 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
+	va_list(p);
 	unsigned int i;
 	char *text;
+	char *te = "(nil)";
 
-	va_list(p);
 	va_start(p, n);
 	if (separator == NULL)
 	{
@@ -22,7 +23,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		text = va_arg(p, char*);
 		if (*text == '\0')
 		{
-			text = "(nil)";
+			text = te;
 		}
 		printf("%s", text);
 		if (i < n - 1)
