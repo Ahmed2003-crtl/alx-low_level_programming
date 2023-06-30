@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include"lists.h"
+#include<stdlib.h>
 /**
  * print_list - print the elements of the list
  * @h: is a pointer
@@ -13,7 +14,7 @@ size_t print_list(const list_t *h)
 	{
 		if (h->str == NULL)
 		{
-			printf("[0](nil)");
+			printf("[0] (nil)");
 		}
 		else
 		{
