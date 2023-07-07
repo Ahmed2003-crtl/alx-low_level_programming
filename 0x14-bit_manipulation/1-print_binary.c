@@ -12,8 +12,6 @@ void print_binary(unsigned long int n)
 	int K = len(n);
 	int i, j, res, sum = 0;
 
-	if (n == 0)
-		return;
 	for (i = K ; i >= 0 ; i--)
 	{
 		sum += module(n, 2) * pow_1(2, i);
