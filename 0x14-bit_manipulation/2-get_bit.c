@@ -16,12 +16,12 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	if (p == NULL)
 		return (-1);
-	for (i = 0 ; i < l ; i++)
+	for (i = l - 1 ; i >= 0 ; i--)
 	{
 		p[i] = n % 2;
 		n = n / 2;
 	}
-	for (j = 0 ; j < l ; j++)
+	for (j = l - 1 ; j >= 0 ; j--)
 	{
 		if (count == index)
 			return (p[j]);
