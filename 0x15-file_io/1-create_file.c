@@ -2,6 +2,9 @@
 #include<stdlib.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include<string.h>
+#include <sys/types.h>
+#include <fcntl.h>
 #include"main.h"
 /**
  * create_file - creat a file and put a string inside it
@@ -11,16 +14,15 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE *fp;
+	int fp;
+	int w;
 
 	if (access(filename, F_OK) == -1)
 		chmod(filename, 0600);
-	fp = fopen(filename, "w");
-	if (fp == NULL || filename == NULL || text_content == NULL)
+	fp = open(filename, O_CREAT | O_RDWR | O_TRUNC);
+	w = write(fp, text_content, strlen(text_content));
+	if (fp == -1 || filename == NULL || text_content == NULL || w == -1)
 		return (-1);
-	if (access(filename, F_OK) == 0)
-		ftruncate(fileno(fp), 0);
-	fprintf(fp, "%s", text_content);
-	fclose(fp);
+	close(fp);
 	return (1);
 }
