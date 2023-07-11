@@ -7,19 +7,19 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	FILE *fp;
+	int fp, w;
 
 	if (filename == NULL)
 		return (-1);
-	if (access(filename, F_OK) == 0)
+	if (text_content == NULL)
+		return (1);
+	if (access("my_file.txt", F_OK))
 	{
-		if (text_content == NULL)
-			return (1);
-		fp = fopen(filename, "a");
-		fprintf(fp, "%s", text_content);
-		if (fp == NULL)
+		fp = open(filename, O_WRONLY | O_APPEND, 744);
+		w = write(fp, text_content, strlen(text_content));
+		if (fp == -1 || w == -1)
 			return (-1);
-		fclose(fp);
+		close(fp);
 		return (1);
 	}
 	return (-1);
